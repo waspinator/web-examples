@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="sidebar.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Collapsible Sidebar Example</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-with-sidebar">
+    <div class="sidebar">
+      <div class="sidebar-inner-scroll">
+        <ul class="sidebar-items">
+          <li class="active">
+            <a href="#" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+              <span class="sidebar-item-icon">
+                <span class="glyphicon glyphicon-pawn" aria-hidden="true"></span>
+              </span>
+              <span class="sidebar-item-name">Pawn</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="sidebar-item-icon">
+                <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
+              </span>
+              <span class="sidebar-item-name">Equalizer</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="sidebar-item-icon">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+              </span>
+              <span class="sidebar-item-name">Calendar</span>
+            </a>
+          </li>
+        </ul>
+        <a role="button" class="sidebar-collapse-button">
+          <span class="sidebar-item-icon">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          </span>
+          <span class="sidebar-item-name">Collapse</span>
+        </a>
+      </div>
+
+    </div>
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-md-8">
+            <div class="alert alert-success" role="alert">col-xs-12 col-md-8</div>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <div class="alert alert-info" role="alert">col-xs-6 col-md-4</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript ">
+    $(document).ready(function () {
+      $('.sidebar-collapse-button').on('click', function () {
+        $('.sidebar').toggleClass('collapsed');
+        $('.sidebar-collapse-button').toggleClass('collapsed');
+        $('.page-with-sidebar').toggleClass('collapsed');
+      });
+
+      $('[data-toggle="tooltip"]').tooltip({
+        'container': 'body',
+        'animation': false
+      });
+    });
+  </script>
+
+</body>
+
+</html>
