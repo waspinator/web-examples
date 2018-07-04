@@ -77,6 +77,11 @@
   width: 50px;
 }
 
+.sidebar-collapse-button.collapsed>.sidebar-item-icon {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
 .content-wrapper {
   width: 100%;
   margin-top: 50px;
